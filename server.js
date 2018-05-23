@@ -10,6 +10,11 @@ app.use(bodyParser.json());
 
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
+require("./app/data/friends");
+
+// app.get("", function (req, res) {
+
+// });
 
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
