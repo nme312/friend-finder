@@ -1,8 +1,7 @@
 //friends data
-
 var friends = [
     {
-        "name": "John",
+        "name": "John Doe",
         "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores": [
             5,
@@ -18,7 +17,7 @@ var friends = [
         ]
     },
     {
-        "name": "Jane",
+        "name": "Jane Doe",
         "photo": "naaah",
         "scores": [
             1,

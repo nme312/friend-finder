@@ -8,7 +8,6 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 // A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 app.get("/api/friends", function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
