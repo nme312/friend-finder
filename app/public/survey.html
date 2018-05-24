@@ -19,7 +19,7 @@
                 <h4>Name(Required)</h4>
                 <input type="text" id="photo" class="form-control mb-5 friend-name" required="">
                 <h4>Link To Image(Required)</h4>
-                <input type="text" id="photo" class="form-control mb-5 friends-link" required="">
+                <input type="text" id="photo" class="form-control mb-5 friend-link" required="">
             </div>
         </div>
 
@@ -174,62 +174,43 @@
                 </div>
             </div>
 
-            <div class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Modal body text goes here.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(".submit").on("click", function (event) {
+                event.preventDefault();
 
-    </div>
-<script type="text/javascript">
-$(".submit").on("click", function(event) {
-    event.preventDefault();
-    
-    var userAnswers = [
-         $("#answer1").val(),
-         $("#answer2").val(),
-         $("#answer3").val(),
-         $("#answer4").val(),
-         $("#answer5").val(),
-         $("#answer6").val(),
-         $("#answer7").val(),
-         $("#answer8").val(),
-         $("#answer9").val(),
-         $("#answer10").val()
-    ];
+                var userAnswers = [
+                    parseInt($("#answer1").val()),
+                    parseInt($("#answer2").val()),
+                    parseInt($("#answer3").val()),
+                    parseInt($("#answer4").val()),
+                    parseInt($("#answer5").val()),
+                    parseInt($("#answer6").val()),
+                    parseInt($("#answer7").val()),
+                    parseInt($("#answer8").val()),
+                    parseInt($("#answer9").val()),
+                    parseInt($("#answer10").val())
+                ];
 
-    var newFriend = {
-        name: $(".friend-name").val().trim(),
-        photo: $(".friend-link").val().trim(),
-        scores: userAnswers
-    }
+                // console.log(numberedUserAnswers);
 
-    console.log(userAnswers);
+                var newFriend = {
+                    name: $(".friend-name").val().trim(),
+                    photo: $(".friend-link").val().trim(),
+                    scores: userAnswers
+                }
 
-    $.post("/api/friends", newFriend)
-        .then(function(data) {
-          console.log(data);
-          alert("Adding friend...");
-    });
+                // console.log(newFriend);
 
-});
-</script>
+                $.post("/api/friends", newFriend)
+                    .then(function (data) {
+                        // console.log(data);
+                        alert("Adding friend...");
+                    });
+            });
+        </script>
 </body>
 
 </html>
