@@ -32,7 +32,38 @@ var friends = [
             4,
             5
         ]
+    },
+    {
+        "name": "Jimmy Doe",
+        "photo": "naaah",
+        "scores": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
     }
 ]
 
 module.exports = friends;
+
+var potentialMatches = [            // existing possible matches for user
+    {
+        name: "joe",
+        answers: [1, 3, 2, 4, 1]
+    },
+    {
+        name: "rick",
+        answers: [4, 1, 4, 2, 3]
+    },
+    {
+        name: "lou",
+        answers: [1, 1, 4, 5, 2]
+    }
+]
